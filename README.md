@@ -13,25 +13,30 @@ ESX Taxi Job adds driving cabs as a service, and more including NPC missions.
 
 ## Download & Installation
 
-### Using [fvm](https://github.com/qlaffont/fvm-installer)
-```
-fvm install --save --folder=esx esx-org/esx_taxijob
-```
+### Download via GIT
 
-### Using Git
+Clone the repository directly into your ESX folder.
+This will allow you to easily update
+
 ```
 cd resources
-git clone https://github.com/ESX-Org/esx_taxijob [esx]/esx_taxijob
+git clone https://github.com/lachee/esx_taxijob [esx]/esx_taxijob
 ```
 
-### Manually
-- Download https://github.com/ESX-Org/esx_taxijob/archive/master.zip
-- Put it in the `[esx]` directory
+If you need to update
 
-## Installation
-- Import `esx_taxijob.sql` in your database
-- If you want player management you have to set `Config.EnablePlayerManagement` to `true` in `config.lua`
-- Add this to your `server.cfg`:
+```
+cd resources/[esx]/esx_taxijob
+git pull
+```
+
+
+### Installation
+1. Import `esx_taxijob.sql` in your database
+2. Copy `sample-config.lua` to `config.lua`.
+3. If you want player management you have to set `Config.EnablePlayerManagement` to `true` in `config.lua`
+4. Add this to your `server.cfg`:
+
 ```
 start esx_taxijob
 ```
