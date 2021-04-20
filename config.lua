@@ -4,6 +4,7 @@ Config.DrawDistance               = 10.0 -- How close do you need to be for the 
 
 Config.NPCJobEarnings             = {min = 300, max = 600}
 Config.MinimumDistance            = 3000 -- Minimum NPC job destination distance from the pickup in GTA units, a higher number prevents nearby destionations.
+Config.NPCSpawning                = true -- Determines if the NPC should spawn
 
 Config.MaxInService               = -1 -- How much people can be in service at once?
 Config.EnablePlayerManagement     = true -- Enable society managing.

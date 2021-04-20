@@ -36,6 +36,18 @@ function ShowLoadingPromt(msg, time, type)
 	end)
 end
 
+-- Creates a random ped near the player on the closest footpath
+function SpawnRandomWalkingNPC() 
+	if Config.NPCSpawning then
+		local playerPed = GetPlayerPed(-1)
+		local playerCoords = GetEntityCoords(playerPed)
+		local validPosition, pedPosition = GetSafeCoordForPed(playerCoords.x, playerCoords.y, playerCoords.z, true, 1);
+		if validPosition then
+			return CreateRandomPed(pedPosition.x, pedPosition.y, pedPosition.z)
+		end
+	end
+end
+
 function GetRandomWalkingNPC()
 	local search = {}
 	local peds   = ESX.Game.GetPeds()
@@ -60,6 +72,9 @@ function GetRandomWalkingNPC()
 
 	if #search > 0 then
 		return search[GetRandomIntInRange(1, #search)]
+	else
+		-- Spawn a rnadom ped if we cannot find any
+		return SpawnRandomWalkingNPC()
 	end
 end
 
